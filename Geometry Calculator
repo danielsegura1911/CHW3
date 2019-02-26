@@ -1,0 +1,80 @@
+
+#include <stdio.h>
+#include <math.h>
+
+int Circle(){
+    float radius;
+    printf("Please enter the radius of the circle:\n");
+    scanf("%f",&radius);
+    printf("you entered:%f\n", radius);
+    float area = 3.1415 * (radius * radius);
+    printf("the area of the circle is:%f\n", area);
+    board();
+}
+int Rectangle(){
+    float length;
+    float width;
+    printf("Please enter the length of the Rectangle:\n");
+    scanf("%f",&length);
+    printf("length:%f\n", length);
+    printf("Please enter the width of the Rectangle:\n"); 
+    scanf("%f", &width);
+    printf("width:%f\n", width);
+    float area = width * length;
+    printf("The area of the rectangle is:%f\n", area);
+    board();
+}
+int Triangle(){
+    float base;
+    float height;
+    printf("Please enter the base of the Triangle:\n");
+    scanf("%f",&base);
+    printf("length:%f\n", base);
+    printf("Please enter the height of the Triangle:\n"); 
+    scanf("%f", &height);
+    printf("width:%f\n", height);
+    float area = (base * height) * .5;
+    printf("The area of the rectangle is:%f\n", area);
+    board();
+}
+int Quit(){
+    return 0;
+}
+
+int board()
+{
+    int input;
+    printf("Geometry Calculator\n");
+    printf("1. Calculate the Area of a Circle\n");
+    printf("2. Calculate the Area of a Rectangle\n");
+    printf("3. Calculate the Area of a Triangle\n");
+    printf("4. Quit\n");
+    printf("Enter your choice (1-4):\n");
+    scanf("%d", &input);
+    printf("you entered:%d\n",input);
+    
+    if (input == 1){
+        Circle();
+    }
+    else if (input == 2){
+        Rectangle();
+    }
+    else if (input == 3){
+        Triangle();
+    }
+    else if (input == 4){
+        Quit();
+    }
+    else{
+        printf("error invalid input\n");
+        board();
+    }
+    
+    
+}
+
+int main()
+{
+    board();
+}
+
