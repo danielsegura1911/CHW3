@@ -1,0 +1,26 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int population;
+    float birthrate;
+    float deathrate;
+    int years;
+    printf("WHat is the starting population? \n");
+    scanf("%d", &population);
+    int initial_population = population;
+    printf("What is the birthrate?\n");
+    scanf("%f", &birthrate);
+    printf("WHat is the deathrate?\n");
+    scanf("%f", &deathrate);
+    printf("Over how many years would you like to know the affect of the population?\n");
+    scanf("%d", &years);
+    for(int count = 1; count <= years; count++){
+    population = population + ((population * (birthrate/100))-(population * (deathrate/100)));
+    }
+    printf("Over %d", years);
+    printf(" years the population will change from %d", initial_population);
+    printf(" to %d\n", population);
+    
+}
