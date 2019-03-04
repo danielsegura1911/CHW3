@@ -1,0 +1,113 @@
+#include <stdio.h>
+
+char board[3][3];
+int row;
+int position;
+int current_player = 0;
+
+
+int player1(){
+    
+    for(int count = 0; count <= 2; count++){
+        for(int count2 = 0; count2 <=2; count2++){
+            printf("[%c",board[count][count2]);
+            printf("] ");
+        }
+        printf(" \n");
+    }
+    
+    printf("Player one choose a square\n");
+    printf("Row: \n");
+    scanf("%d", &row);
+    printf("position: \n");
+    scanf("%d", &position);
+    board[row][position] = 'X';
+    win();
+
+}
+
+int player2(){
+    
+    for(int count = 0; count <= 2; count++){
+        for(int count2 = 0; count2 <=2; count2++){
+            printf("[%c",board[count][count2]);
+            printf("] ");
+        }
+        printf("\n");
+    }
+    
+    printf("Player Two choose a square\n");
+    printf("Row: \n");
+    scanf("%d", &row);
+    printf("position: \n");
+    scanf("%d", &position);
+    board[row][position] = 'O';
+    win();
+}
+
+int win(){
+    for (int i = 0; i < 2; i++){
+        if (board[i][0] == board[i][1] && board[i][1] == board[i][2]){
+            for(int count = 0; count <= 2; count++){
+                for(int count2 = 0; count2 <=2; count2++){
+                printf("[%c",board[count][count2]);
+                printf("] ");
+        }
+            printf("\n");
+    }
+            current_player++;
+            printf("Player%d", current_player);
+            printf(" wins");
+            return 0;
+        }
+    }
+    
+    for (int i = 0; i < 2; i++){
+        if (board[0][i] == board[1][i] && board[1][i] == board[2][i]){
+            for(int count = 0; count <= 2; count++){
+                for(int count2 = 0; count2 <=2; count2++){
+                printf("[%c",board[count][count2]);
+                printf("] ");
+                            }
+            printf("\n");
+                        }
+            current_player++;
+            printf("Player%d", current_player);
+            printf(" wins");
+            return 0;
+        }
+    }
+    
+    if ((board[0][0] == board[1][1] && board[1][1] == board[2][2]) || (board[0][2] == board[1][1] && board[1][1] == board[2][0])){
+            for(int count = 0; count <= 2; count++){
+                for(int count2 = 0; count2 <=2; count2++){
+                printf("[%c",board[count][count2]);
+                printf("] ");
+                            }
+            printf("\n");
+                        }
+            current_player++;
+            printf("Player%d", current_player);
+            printf(" wins");
+            return 0;
+    }
+    
+    current_player++;
+    current_player= current_player%2;
+    if(current_player == 0){
+        player1();
+    }
+    else{
+        player2();
+    }
+}
+
+
+
+int main(){
+            
+
+player1();
+
+}
+
