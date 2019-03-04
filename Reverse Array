@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+
+int array1[5];
+int size = 0;
+
+int reverse(int s){
+    printf("\n");
+    int t = s - 1;
+    int arraycopy[s];
+    for(int count = 0; count <= s - 1; count++){
+        arraycopy[count] = array1[t];
+        t--;
+        printf("%d", arraycopy[count]);
+    }
+    
+}
+
+
+int main()
+{
+    int i = 100;
+    for(int count = 0; count <=4; count++){
+        array1[count] = i;
+        size++;
+        i = i + 25;
+        printf("%d", array1[count]);
+    }
+    reverse(size);
+}
